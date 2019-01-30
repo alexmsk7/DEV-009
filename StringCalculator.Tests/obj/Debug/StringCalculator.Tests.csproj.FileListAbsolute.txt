@@ -1,0 +1,10 @@
+P:\Users\st15503\Desktop\Project\TDD_Kata\StringCalculator.Tests\obj\Debug\StringCalculator.Tests.csprojAssemblyReference.cache
+P:\Users\st15503\Desktop\Project\TDD_Kata\StringCalculator.Tests\obj\Debug\StringCalculator.Tests.csproj.CoreCompileInputs.cache
+P:\Users\st15503\Desktop\Project\TDD_Kata\StringCalculator.Tests\bin\Debug\StringCalculator.Tests.dll
+P:\Users\st15503\Desktop\Project\TDD_Kata\StringCalculator.Tests\bin\Debug\StringCalculator.Tests.pdb
+P:\Users\st15503\Desktop\Project\TDD_Kata\StringCalculator.Tests\bin\Debug\nunit.framework.dll
+P:\Users\st15503\Desktop\Project\TDD_Kata\StringCalculator.Tests\bin\Debug\nunit.framework.pdb
+P:\Users\st15503\Desktop\Project\TDD_Kata\StringCalculator.Tests\bin\Debug\nunit.framework.xml
+P:\Users\st15503\Desktop\Project\TDD_Kata\StringCalculator.Tests\obj\Debug\StringCalculator.Tests.csproj.CopyComplete
+P:\Users\st15503\Desktop\Project\TDD_Kata\StringCalculator.Tests\obj\Debug\StringCalculator.Tests.dll
+P:\Users\st15503\Desktop\Project\TDD_Kata\StringCalculator.Tests\obj\Debug\StringCalculator.Tests.pdb
