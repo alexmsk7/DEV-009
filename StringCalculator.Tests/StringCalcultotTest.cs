@@ -2,47 +2,47 @@
 using System.Collections;
 using NUnit.Framework;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace StringCalculator.Tests
 {
     [TestFixture]
     public class StringCalcultorTest
     {
-        private CStringCalculator _stringCalculator;
+        private StringCalculator _stringCalculator;
 
         [SetUp]
         public void SetUp()
         {
-            _stringCalculator = new CStringCalculator();
+            _stringCalculator = new StringCalculator();
         }
 
         [TearDown]
         public void TearDown() {}
 
-        public class CStringCalculator
+        public class StringCalculator
         {
             public int Add(string numbers)
             {
-                ArrayList arrListNewDilimiter = new ArrayList();
-                arrListNewDilimiter.Add(",");
+                var arrListNewDilimiter = new List<string> {","};
 
-                if (numbers.Contains("//"))
-                {
-                    Regex regex = new Regex(@"((?<=\[)([^]]+)(?=\]))|((?<=\//)(.))");
-                    MatchCollection matches = regex.Matches(numbers);
-                    foreach (Match match in matches) arrListNewDilimiter.Add(match.Value);
-                }
+               arrListNewDilimiter.AddRange(GetAllowedDelimeters(numbers));
 
-                numbers = numbers.Contains("\n") ? numbers.Substring(numbers.LastIndexOf("\n", StringComparison.Ordinal)) : numbers;
+                var NewLineSymbol = "\n";
 
-                string[] strarrNumbers = numbers.Split((string[])arrListNewDilimiter.ToArray(typeof(string)), StringSplitOptions.None);
+                numbers = numbers.Contains(NewLineSymbol) ? numbers.Substring(numbers.LastIndexOf(NewLineSymbol, StringComparison.Ordinal)) : numbers;
+
+                string[] strarrNumbers = numbers.Split(arrListNewDilimiter.ToArray(), StringSplitOptions.None);
+
                 int dwCalculateAdd = 0;
                 try
                 {
                     foreach (var t in strarrNumbers)
                     {
                         if (int.Parse(t) < 0) { throw new ArgumentException("Negative Number"); }
+
                         if (int.Parse(t) >= 1000) { continue; }
+
                         dwCalculateAdd += int.Parse(t);
                     }
                 }
@@ -57,6 +57,21 @@ namespace StringCalculator.Tests
                 }
 
                 return dwCalculateAdd;
+            }
+
+            private static List<string> GetAllowedDelimeters(string numbers)
+            {
+                List<string> delimeters = new List<string>();
+
+                if (numbers.Contains("//"))
+                {
+                    Regex regex = new Regex(@"((?<=\[)([^]]+)(?=\]))|((?<=\//)(.))");
+                    MatchCollection matches = regex.Matches(numbers);
+                    foreach (Match match in matches)
+                        delimeters.Add(match.Value);
+                }
+
+                return delimeters;
             }
         }
 
