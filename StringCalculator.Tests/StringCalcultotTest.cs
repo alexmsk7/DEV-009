@@ -20,18 +20,18 @@ namespace StringCalculator.Tests
         {
             public int Add(string numbers)
             {
-               ArrayList ArrListNewDilimiter = new ArrayList();
-               ArrListNewDilimiter.Add(",");
+               ArrayList arrListNewDilimiter = new ArrayList();
+               arrListNewDilimiter.Add(",");
 
                if (numbers.Contains("//")) {
                     Regex regex = new Regex(@"((?<=\[)([^]]+)(?=\]))|((?<=\//)(.))");
                     MatchCollection matches = regex.Matches(numbers);
-                    foreach (Match match in matches) ArrListNewDilimiter.Add(match.Value);
+                    foreach (Match match in matches) arrListNewDilimiter.Add(match.Value);
                 }
 
                 numbers = numbers.Contains("\n") ? numbers.Substring(numbers.LastIndexOf("\n", StringComparison.Ordinal)) : numbers;
 
-                string[] strarrNumbers = numbers.Split((string[])ArrListNewDilimiter.ToArray(typeof(string)), StringSplitOptions.None);
+                string[] strarrNumbers = numbers.Split((string[])arrListNewDilimiter.ToArray(typeof(string)), StringSplitOptions.None);
                     int dwCalculateAdd = 0;
                 try
                 {
