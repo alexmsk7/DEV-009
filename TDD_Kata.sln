@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringCalculator.Tests", "StringCalculator.Tests\StringCalculator.Tests.csproj", "{82EADD0D-BC69-4740-AFC9-8613E4B093CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeMockStub.Tests", "FakeUnitTest\FakeMockStub.Tests.csproj", "{F99C874F-9EAD-4D4A-BE27-E2436730896B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeMockStub", "ClassLibrary1\FakeMockStub.csproj", "{DC67D823-6D8B-4416-BE07-D708F8330D92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{82EADD0D-BC69-4740-AFC9-8613E4B093CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82EADD0D-BC69-4740-AFC9-8613E4B093CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82EADD0D-BC69-4740-AFC9-8613E4B093CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F99C874F-9EAD-4D4A-BE27-E2436730896B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F99C874F-9EAD-4D4A-BE27-E2436730896B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F99C874F-9EAD-4D4A-BE27-E2436730896B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F99C874F-9EAD-4D4A-BE27-E2436730896B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC67D823-6D8B-4416-BE07-D708F8330D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC67D823-6D8B-4416-BE07-D708F8330D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC67D823-6D8B-4416-BE07-D708F8330D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC67D823-6D8B-4416-BE07-D708F8330D92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

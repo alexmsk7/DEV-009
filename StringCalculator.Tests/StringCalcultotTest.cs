@@ -16,14 +16,18 @@ namespace StringCalculator.Tests
             _stringCalculator = new CStringCalculator();
         }
 
+        [TearDown]
+        public void TearDown() {}
+
         public class CStringCalculator
         {
             public int Add(string numbers)
             {
-               ArrayList arrListNewDilimiter = new ArrayList();
-               arrListNewDilimiter.Add(",");
+                ArrayList arrListNewDilimiter = new ArrayList();
+                arrListNewDilimiter.Add(",");
 
-               if (numbers.Contains("//")) {
+                if (numbers.Contains("//"))
+                {
                     Regex regex = new Regex(@"((?<=\[)([^]]+)(?=\]))|((?<=\//)(.))");
                     MatchCollection matches = regex.Matches(numbers);
                     foreach (Match match in matches) arrListNewDilimiter.Add(match.Value);
@@ -32,7 +36,7 @@ namespace StringCalculator.Tests
                 numbers = numbers.Contains("\n") ? numbers.Substring(numbers.LastIndexOf("\n", StringComparison.Ordinal)) : numbers;
 
                 string[] strarrNumbers = numbers.Split((string[])arrListNewDilimiter.ToArray(typeof(string)), StringSplitOptions.None);
-                    int dwCalculateAdd = 0;
+                int dwCalculateAdd = 0;
                 try
                 {
                     foreach (var t in strarrNumbers)
@@ -52,7 +56,7 @@ namespace StringCalculator.Tests
                     return 0;
                 }
 
-                    return dwCalculateAdd;
+                return dwCalculateAdd;
             }
         }
 
@@ -60,8 +64,8 @@ namespace StringCalculator.Tests
         public void Add_EmptyString_ReturnZero(string actual, int expected)
         {
             //Arrange
-            
-     
+
+
             //Act
             int result = _stringCalculator.Add(actual);
 
@@ -73,7 +77,7 @@ namespace StringCalculator.Tests
         public void Add_SingleNumber_ReturnThisNumber(string actual, int expected)
         {
             //Arrange
-           
+
 
             //Act
             int result = _stringCalculator.Add(actual);
@@ -87,6 +91,7 @@ namespace StringCalculator.Tests
         {
             //Arrange
 
+
             //Act
             int result = _stringCalculator.Add(actual);
 
@@ -98,6 +103,7 @@ namespace StringCalculator.Tests
         public void Add_ManyNumbers_ReturnFinalNumber(string actual, int expected)
         {
             //Arrange
+
 
             //Act
             int result = _stringCalculator.Add(actual);
@@ -114,12 +120,12 @@ namespace StringCalculator.Tests
         {
             //Arrange
 
+
             //Act
             int result = _stringCalculator.Add(actual);
 
             //Assert
             Assert.That(result, Is.EqualTo(expected));
-
         }
 
         [TestCase("//;\n1;2", 3)]
@@ -127,18 +133,19 @@ namespace StringCalculator.Tests
         {
             //Arrange
 
+
             //Act
             int result = _stringCalculator.Add(actual);
 
             //Assert
             Assert.That(result, Is.EqualTo(expected));
-
         }
 
         [TestCase("//;\n-1;2", -1)]
         public void Add_NegativeNumbers_ReturnNegativeResult(string actual, int expected)
         {
             //Arrange
+
 
             //Act
             int result = _stringCalculator.Add(actual);
@@ -152,6 +159,7 @@ namespace StringCalculator.Tests
         {
             //Arrange
 
+
             //Act
             int result = _stringCalculator.Add(actual);
 
@@ -163,6 +171,7 @@ namespace StringCalculator.Tests
         public void Add_DelimiterWithAnyLength_ReturnResult(string actual, int expected)
         {
             //Arrange
+
 
             //Act
             int result = _stringCalculator.Add(actual);
@@ -176,6 +185,7 @@ namespace StringCalculator.Tests
         {
             //Arrange
 
+
             //Act
             int result = _stringCalculator.Add(actual);
 
@@ -188,13 +198,13 @@ namespace StringCalculator.Tests
         {
             //Arrange
 
+
             //Act
             int result = _stringCalculator.Add(actual);
 
             //Assert
             Assert.That(result, Is.EqualTo(expected));
         }
-
     }
 
 }
